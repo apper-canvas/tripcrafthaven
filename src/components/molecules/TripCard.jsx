@@ -11,14 +11,29 @@ const TripCard = ({ trip }) => {
     navigate(`/trip/${trip.id}/timeline`)
   }
   
-  const formatDateRange = (startDate, endDate) => {
-    const start = new Date(startDate)
-    const end = new Date(endDate)
+const formatDateRange = (startDate, endDate) => {
+    // Validate input dates
+    if (!startDate || !endDate) {
+      return 'Date not available'
+    }
     
-    if (start.getMonth() === end.getMonth()) {
-      return `${format(start, 'MMM d')} - ${format(end, 'd, yyyy')}`
-    } else {
-      return `${format(start, 'MMM d')} - ${format(end, 'MMM d, yyyy')}`
+    try {
+      const start = new Date(startDate)
+      const end = new Date(endDate)
+      
+      // Check if dates are valid
+      if (isNaN(start.getTime()) || isNaN(end.getTime())) {
+        return 'Invalid date'
+      }
+      
+      if (start.getMonth() === end.getMonth()) {
+        return `${format(start, 'MMM d')} - ${format(end, 'd, yyyy')}`
+      } else {
+        return `${format(start, 'MMM d')} - ${format(end, 'MMM d, yyyy')}`
+      }
+    } catch (error) {
+      console.error('Error formatting date range:', error)
+      return 'Date format error'
     }
   }
   
@@ -63,8 +78,18 @@ const TripCard = ({ trip }) => {
           
           <div className="flex items-center text-gray-500">
             <ApperIcon name="Clock" className="w-4 h-4 mr-1" />
-            <span className="text-xs">
-              {Math.ceil((new Date(trip.endDate) - new Date(trip.startDate)) / (1000 * 60 * 60 * 24))} days
+<span className="text-xs">
+              {(() => {
+                try {
+                  if (!trip.start_date || !trip.end_date) return '0 days'
+                  const start = new Date(trip.start_date)
+                  const end = new Date(trip.end_date)
+                  if (isNaN(start.getTime()) || isNaN(end.getTime())) return '0 days'
+                  return Math.ceil((end - start) / (1000 * 60 * 60 * 24)) + ' days'
+                } catch (error) {
+                  return '0 days'
+                }
+              })()}
             </span>
           </div>
         </div>
