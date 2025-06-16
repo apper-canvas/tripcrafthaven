@@ -27,9 +27,18 @@ const [trip, setTrip] = useState(null)
     }
   }, [tripId])
 
-  const loadTripData = async () => {
+const loadTripData = async () => {
     setLoading(true)
     setError(null)
+    
+    // Validate tripId exists before making API calls
+    if (!tripId) {
+      toast.error('Invalid trip ID. Redirecting to My Trips...')
+      navigate('/trips')
+      setLoading(false)
+      return
+    }
+    
     try {
       const [tripData, activitiesData] = await Promise.all([
         tripService.getById(tripId),
