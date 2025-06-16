@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "name": "Tokyo Adventure",
+    "destination": "Tokyo, Japan",
+    "startDate": "2024-03-15",
+    "endDate": "2024-03-22",
+    "coverImage": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    "createdAt": "2024-01-15T10:30:00Z"
+  },
+  {
+    "id": "2",
+    "name": "European Discovery",
+    "destination": "Paris, France",
+    "startDate": "2024-05-10",
+    "endDate": "2024-05-20",
+    "coverImage": "https://images.unsplash.com/photo-1502602898536-47ad22581b52?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    "createdAt": "2024-01-20T14:15:00Z"
+  },
+  {
+    "id": "3",
+    "name": "Tropical Getaway",
+    "destination": "Bali, Indonesia",
+    "startDate": "2024-07-05",
+    "endDate": "2024-07-15",
+    "coverImage": "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    "createdAt": "2024-02-01T09:45:00Z"
+  },
+  {
+    "id": "4",
+    "name": "NYC Business Trip",
+    "destination": "New York, USA",
+    "startDate": "2024-04-08",
+    "endDate": "2024-04-12",
+    "coverImage": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    "createdAt": "2024-02-10T16:20:00Z"
+  }
+]

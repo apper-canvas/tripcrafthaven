@@ -1,0 +1,101 @@
+[
+  {
+    "id": "1",
+    "tripId": "1",
+    "type": "flight",
+    "title": "Flight to Tokyo",
+    "date": "2024-03-15",
+    "time": "08:00",
+    "duration": 720,
+    "location": "LAX Airport",
+    "notes": "United Airlines UA35 - Check in 2 hours early"
+  },
+  {
+    "id": "2",
+    "tripId": "1",
+    "type": "hotel",
+    "title": "Check-in at Tokyo Hotel",
+    "date": "2024-03-15",
+    "time": "15:00",
+    "duration": 30,
+    "location": "Shibuya District",
+    "notes": "Reservation #TKY-2024-001"
+  },
+  {
+    "id": "3",
+    "tripId": "1",
+    "type": "sightseeing",
+    "title": "Visit Senso-ji Temple",
+    "date": "2024-03-16",
+    "time": "10:00",
+    "duration": 180,
+    "location": "Asakusa",
+    "notes": "Traditional Buddhist temple, don't forget camera"
+  },
+  {
+    "id": "4",
+    "tripId": "1",
+    "type": "restaurant",
+    "title": "Sushi Dinner",
+    "date": "2024-03-16",
+    "time": "19:00",
+    "duration": 120,
+    "location": "Tsukiji Outer Market",
+    "notes": "Reservation at Daiwa Sushi - early arrival recommended"
+  },
+  {
+    "id": "5",
+    "tripId": "2",
+    "type": "flight",
+    "title": "Flight to Paris",
+    "date": "2024-05-10",
+    "time": "22:30",
+    "duration": 660,
+    "location": "JFK Airport",
+    "notes": "Air France AF1 - Overnight flight"
+  },
+  {
+    "id": "6",
+    "tripId": "2",
+    "type": "sightseeing",
+    "title": "Eiffel Tower Visit",
+    "date": "2024-05-11",
+    "time": "14:00",
+    "duration": 180,
+    "location": "Champ de Mars",
+    "notes": "Pre-booked tickets for elevator to top"
+  },
+  {
+    "id": "7",
+    "tripId": "2",
+    "type": "restaurant", 
+    "title": "French Bistro Lunch",
+    "date": "2024-05-12",
+    "time": "12:30",
+    "duration": 90,
+    "location": "Latin Quarter",
+    "notes": "Le Comptoir du Relais - try the coq au vin"
+  },
+  {
+    "id": "8",
+    "tripId": "3",
+    "type": "flight",
+    "title": "Flight to Bali",
+    "date": "2024-07-05",
+    "time": "01:15",
+    "duration": 840,
+    "location": "LAX Airport",
+    "notes": "Singapore Airlines SQ12 with layover in Singapore"
+  },
+  {
+    "id": "9",
+    "tripId": "3",
+    "type": "hotel",
+    "title": "Resort Check-in",
+    "date": "2024-07-06",
+    "time": "14:00",
+    "duration": 30,
+    "location": "Ubud",
+    "notes": "Four Seasons Resort Bali - jungle view room"
+  }
+]

@@ -1,0 +1,146 @@
+[
+  {
+    "id": "1",
+    "tripId": "1",
+    "category": "clothing",
+    "name": "T-shirts",
+    "quantity": 5,
+    "packed": true
+  },
+  {
+    "id": "2",
+    "tripId": "1",
+    "category": "clothing",
+    "name": "Jeans",
+    "quantity": 2,
+    "packed": true
+  },
+  {
+    "id": "3",
+    "tripId": "1",
+    "category": "clothing",
+    "name": "Underwear",
+    "quantity": 8,
+    "packed": false
+  },
+  {
+    "id": "4",
+    "tripId": "1",
+    "category": "clothing",
+    "name": "Socks",
+    "quantity": 8,
+    "packed": false
+  },
+  {
+    "id": "5",
+    "tripId": "1",
+    "category": "toiletries",
+    "name": "Toothbrush",
+    "quantity": 1,
+    "packed": true
+  },
+  {
+    "id": "6",
+    "tripId": "1",
+    "category": "toiletries",
+    "name": "Toothpaste",
+    "quantity": 1,
+    "packed": true
+  },
+  {
+    "id": "7",
+    "tripId": "1",
+    "category": "toiletries",
+    "name": "Shampoo",
+    "quantity": 1,
+    "packed": false
+  },
+  {
+    "id": "8",
+    "tripId": "1",
+    "category": "documents",
+    "name": "Passport",
+    "quantity": 1,
+    "packed": true
+  },
+  {
+    "id": "9",
+    "tripId": "1",
+    "category": "documents",
+    "name": "Travel Insurance",
+    "quantity": 1,
+    "packed": false
+  },
+  {
+    "id": "10",
+    "tripId": "1",
+    "category": "electronics",
+    "name": "Phone Charger",
+    "quantity": 1,
+    "packed": true
+  },
+  {
+    "id": "11",
+    "tripId": "2",
+    "category": "clothing",
+    "name": "Dress Shirts",
+    "quantity": 3,
+    "packed": false
+  },
+  {
+    "id": "12",
+    "tripId": "2",
+    "category": "clothing",
+    "name": "Formal Pants",
+    "quantity": 2,
+    "packed": false
+  },
+  {
+    "id": "13",
+    "tripId": "2",
+    "category": "toiletries",
+    "name": "Cologne",
+    "quantity": 1,
+    "packed": true
+  },
+  {
+    "id": "14",
+    "tripId": "2",
+    "category": "documents",
+    "name": "Visa Documents",
+    "quantity": 1,
+    "packed": false
+  },
+  {
+    "id": "15",
+    "tripId": "3",
+    "category": "clothing",
+    "name": "Swimwear",
+    "quantity": 3,
+    "packed": false
+  },
+  {
+    "id": "16",
+    "tripId": "3",
+    "category": "clothing",
+    "name": "Summer Dresses",
+    "quantity": 4,
+    "packed": true
+  },
+  {
+    "id": "17",
+    "tripId": "3",
+    "category": "accessories",
+    "name": "Sunglasses",
+    "quantity": 1,
+    "packed": false
+  },
+  {
+    "id": "18",
+    "tripId": "3",
+    "category": "accessories",
+    "name": "Sun Hat",
+    "quantity": 1,
+    "packed": true
+  }
+]
