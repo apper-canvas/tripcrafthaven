@@ -41,14 +41,24 @@ const tripService = {
       
       const response = await apperClient.getRecordById('trip', id, params)
       
-      if (!response.success) {
+if (!response.success) {
         console.error(response.message)
+        // Check if this is a "record not found" error
+        if (response.message && response.message.toLowerCase().includes('record does not exist')) {
+          throw new Error(`Trip with ID ${id} was not found. It may have been deleted or you may not have permission to access it.`)
+        }
         throw new Error(response.message)
+      }
+      
+      // Additional check for empty response data
+      if (!response.data) {
+        throw new Error(`Trip with ID ${id} was not found or returned empty data.`)
       }
       
       return response.data
     } catch (error) {
       console.error(`Error fetching trip with ID ${id}:`, error)
+      // Re-throw with preserved error message for UI components
       throw error
     }
   },
