@@ -1,8 +1,8 @@
 import MyTrips from '@/components/pages/MyTrips'
 import Timeline from '@/components/pages/Timeline'
+import Calendar from '@/components/pages/Calendar'
 import Packing from '@/components/pages/Packing'
 import Overview from '@/components/pages/Overview'
-
 export const routes = {
   trips: {
     id: 'trips',
@@ -17,6 +17,14 @@ export const routes = {
     path: '/trip/:tripId/timeline',
     icon: 'Calendar',
     component: Timeline,
+    requiresTrip: true
+},
+  calendar: {
+    id: 'calendar',
+    label: 'Calendar',
+    path: '/trip/:tripId/calendar',
+    icon: 'CalendarDays',
+    component: Calendar,
     requiresTrip: true
   },
   packing: {

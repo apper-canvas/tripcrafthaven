@@ -32,8 +32,9 @@ const Layout = () => {
     { id: 'trips', label: 'My Trips', path: '/trips', icon: 'MapPin' }
   ]
 
-  const tripNavigationItems = currentTrip ? [
+const tripNavigationItems = currentTrip ? [
     { id: 'timeline', label: 'Timeline', path: `/trip/${tripId}/timeline`, icon: 'Calendar' },
+    { id: 'calendar', label: 'Calendar', path: `/trip/${tripId}/calendar`, icon: 'CalendarDays' },
     { id: 'packing', label: 'Packing', path: `/trip/${tripId}/packing`, icon: 'Package' },
     { id: 'overview', label: 'Overview', path: `/trip/${tripId}/overview`, icon: 'BarChart3' }
   ] : []
