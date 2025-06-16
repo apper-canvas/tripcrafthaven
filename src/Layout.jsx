@@ -1,15 +1,17 @@
 import { Outlet, NavLink, useParams, useLocation } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
+import { useSelector } from 'react-redux'
 import { motion, AnimatePresence } from 'framer-motion'
 import ApperIcon from '@/components/ApperIcon'
 import { tripService } from '@/services'
-
+import { AuthContext } from '@/App'
 const Layout = () => {
   const [currentTrip, setCurrentTrip] = useState(null)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const { tripId } = useParams()
   const location = useLocation()
-
+  const { logout } = useContext(AuthContext)
+  const { user } = useSelector((state) => state.user)
   useEffect(() => {
     const loadCurrentTrip = async () => {
       if (tripId) {
@@ -121,9 +123,45 @@ const Layout = () => {
                     </NavLink>
                   ))}
                 </div>
-              </div>
+</div>
             )}
           </nav>
+
+          {/* User Profile Section */}
+          {user && (
+            <div className="p-4 border-t border-surface-200">
+              <div className="bg-white p-4 rounded-xl shadow-sm border border-surface-200">
+                <div className="flex items-center mb-3">
+                  <div className="w-10 h-10 rounded-full gradient-travel flex items-center justify-center">
+                    <span className="text-white font-semibold text-sm">
+                      {user.firstName?.[0] || user.emailAddress?.[0] || 'U'}
+                    </span>
+                  </div>
+                  <div className="ml-3 flex-1 min-w-0">
+                    <p className="text-sm font-medium text-gray-900 truncate">
+                      {user.firstName && user.lastName 
+                        ? `${user.firstName} ${user.lastName}` 
+                        : user.emailAddress}
+                    </p>
+                    <p className="text-xs text-gray-500 truncate">
+                      {user.emailAddress}
+                    </p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => {
+                    if (confirm('Are you sure you want to logout?')) {
+                      logout()
+                    }
+                  }}
+                  className="w-full flex items-center justify-center px-3 py-2 text-sm font-medium text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-lg transition-all duration-200"
+                >
+                  <ApperIcon name="LogOut" className="w-4 h-4 mr-2" />
+                  Logout
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </aside>
 
@@ -238,9 +276,46 @@ const Layout = () => {
                           </NavLink>
                         ))}
                       </div>
-                    </div>
+</div>
                   )}
                 </nav>
+
+                {/* Mobile User Profile Section */}
+                {user && (
+                  <div className="p-4 border-t border-surface-200">
+                    <div className="bg-white p-4 rounded-xl shadow-sm border border-surface-200">
+                      <div className="flex items-center mb-3">
+                        <div className="w-10 h-10 rounded-full gradient-travel flex items-center justify-center">
+                          <span className="text-white font-semibold text-sm">
+                            {user.firstName?.[0] || user.emailAddress?.[0] || 'U'}
+                          </span>
+                        </div>
+                        <div className="ml-3 flex-1 min-w-0">
+                          <p className="text-sm font-medium text-gray-900 truncate">
+                            {user.firstName && user.lastName 
+                              ? `${user.firstName} ${user.lastName}` 
+                              : user.emailAddress}
+                          </p>
+                          <p className="text-xs text-gray-500 truncate">
+                            {user.emailAddress}
+                          </p>
+                        </div>
+                      </div>
+                      <button
+                        onClick={() => {
+                          if (confirm('Are you sure you want to logout?')) {
+                            logout()
+                            setIsMobileMenuOpen(false)
+                          }
+                        }}
+                        className="w-full flex items-center justify-center px-3 py-2 text-sm font-medium text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-lg transition-all duration-200"
+                      >
+                        <ApperIcon name="LogOut" className="w-4 h-4 mr-2" />
+                        Logout
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             </motion.div>
           </>
