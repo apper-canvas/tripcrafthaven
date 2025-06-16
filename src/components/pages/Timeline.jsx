@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { format, differenceInDays, eachDayOfInterval } from 'date-fns'
 import { toast } from 'react-toastify'
@@ -13,7 +13,8 @@ import { tripService, activityService } from '@/services'
 
 const Timeline = () => {
   const { tripId } = useParams()
-  const [trip, setTrip] = useState(null)
+const [trip, setTrip] = useState(null)
+  const navigate = useNavigate()
   const [activities, setActivities] = useState([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
@@ -36,8 +37,18 @@ const Timeline = () => {
       ])
       setTrip(tripData)
       setActivities(activitiesData)
-    } catch (err) {
-      setError(err.message || 'Failed to load trip data')
+} catch (err) {
+      const errorMessage = err.message || 'Failed to load trip data'
+      
+      // Check if the error is specifically "Record does not exist"
+      if (errorMessage.includes('Record does not exist')) {
+        toast.error('Trip not found. Redirecting to My Trips...')
+        navigate('/trips')
+        return
+      }
+      
+      // Handle other types of errors
+      setError(errorMessage)
       toast.error('Failed to load trip data')
     } finally {
       setLoading(false)
