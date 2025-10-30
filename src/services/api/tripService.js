@@ -10,7 +10,14 @@ const tripService = {
       })
       
       const params = {
-        Fields: ['Name', 'destination', 'start_date', 'end_date', 'cover_image', 'created_at']
+fields: [
+          {"field": {"Name": "Name"}},
+          {"field": {"Name": "destination"}},
+          {"field": {"Name": "start_date"}},
+          {"field": {"Name": "end_date"}},
+          {"field": {"Name": "cover_image"}},
+          {"field": {"Name": "created_at"}}
+        ]
       }
       
       const response = await apperClient.fetchRecords('trip', params)
@@ -36,7 +43,14 @@ const tripService = {
       })
       
       const params = {
-        fields: ['Name', 'destination', 'start_date', 'end_date', 'cover_image', 'created_at']
+fields: [
+          {"field": {"Name": "Name"}},
+          {"field": {"Name": "destination"}},
+          {"field": {"Name": "start_date"}},
+          {"field": {"Name": "end_date"}},
+          {"field": {"Name": "cover_image"}},
+          {"field": {"Name": "created_at"}}
+        ]
       }
       
       const response = await apperClient.getRecordById('trip', id, params)
